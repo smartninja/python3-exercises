@@ -1,5 +1,5 @@
 with open("data.csv", 'r') as data_file:
-    content = data_file.readlines()
+    content = data_file.read().splitlines()
 
     for row in content:
         row_data = row.split(",")

@@ -7,7 +7,7 @@ player = input("Hi, what is your name? ")
 secret = random.randint(1, 30)
 attempts = 0
 
-with open("score_list.txt", "r") as score_file:
+with open("score_list.json", "r") as score_file:
     score_list = json.loads(score_file.read())
     print("Top scores: " + str(score_list))
 
@@ -26,7 +26,7 @@ while True:
         score_list.append({"attempts": attempts, "date": str(datetime.datetime.now()), "player_name": player,
                            "secret_number": secret})
 
-        with open("score_list.txt", "w") as score_file:
+        with open("score_list.json", "w") as score_file:
             score_file.write(json.dumps(score_list))
 
         print("You've guessed it - congratulations! It's number " + str(secret))

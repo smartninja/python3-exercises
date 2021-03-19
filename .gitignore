@@ -1,3 +1,5 @@
+.idea
 *.db
 *.pyc
 .DS_Store
+venv/

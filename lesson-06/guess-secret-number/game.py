@@ -26,7 +26,7 @@ def play_game():
 
             score_list.append(result_obj.__dict__)
 
-            with open("score_list.txt", "w") as score_file:
+            with open("score_list.json", "w") as score_file:
                 score_file.write(json.dumps(score_list))
 
             print("You've guessed it - congratulations! It's number " + str(secret))
@@ -40,7 +40,7 @@ def play_game():
 
 # Get a list of all scores
 def get_score_list():
-    with open("score_list.txt", "r") as score_file:
+    with open("score_list.json", "r") as score_file:
         score_list = json.loads(score_file.read())
         return score_list
 
